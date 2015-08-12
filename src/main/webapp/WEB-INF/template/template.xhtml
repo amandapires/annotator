@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:p="http://primefaces.org/ui">
+
+	<h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>
+        	<ui:insert name="titulo">Annotator Project</ui:insert>
+        </title>      
+	</h:head>
+	
+	<h:body>
+		 <h:outputStylesheet library="css" name="style.css" />
+		 
+		 <header>
+			<div style="float: left">
+				Annotator Project
+			</div>
+		</header>
+		
+		<div id="conteudo">
+			<ui:insert name="corpo"/>
+		</div>
+
+		<footer>
+			Annotator Project
+		</footer>
+
+	</h:body>
+	
+</html>

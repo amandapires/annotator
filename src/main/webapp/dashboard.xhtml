@@ -1,0 +1,51 @@
+<ui:composition template="/WEB-INF/template/template.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:jsf="http://xmlns.jcp.org/jsf"
+    xmlns:p="http://primefaces.org/ui">
+
+	<ui:define name="titulo">DashBoard - Annotator Project</ui:define>
+	
+	<ui:define name="corpo">
+		
+		<h:form id="form-index" prependId="false">
+			<p:growl id="messages" showDetail="true" />
+		
+			<p:panel id="panel-data-table">
+				<p:fileUpload id="file-upload" fileUploadListener="#{annotatorBean.uploadFile}" mode="advanced" dragDropSupport="false"
+		           update="messages, panel-data-table,tbl" process="@form" sizeLimit="100000" fileLimit="1" allowTypes="/(\.|\/)(csv)$/" />
+		    
+		    	<br/>
+		    	
+				<p:dataTable value="#{annotatorBean.rows}" var="row" id="tbl" resizableColumns="true" stickyHeader="true">
+					
+				    <p:columns value="#{annotatorBean.columns}" var="column">
+				       
+				        
+				        <f:facet name="header">
+			                <h:outputText value="#{column}" />
+			                
+			                <p:panel header="Property">
+			                
+			                </p:panel>
+			                
+			                <p:panel header="Tipy">
+			                
+			                </p:panel>
+			                
+			                <p:panel header="Class">
+			                
+			                </p:panel>
+			            </f:facet>
+			            <h:outputText value="#{row[column]}" />
+				        
+				    </p:columns>
+				</p:dataTable>
+		    			    	
+		    </p:panel>	
+		    
+		</h:form>		
+	</ui:define>
+</ui:composition>
